@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+
+
+</style>
+
+<script>
+
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function phonenumber(inputtxt) {
+  var phonenr = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(inputtxt.value.match(phonenr)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+function Validate(){
+
+var fname=document.forms["customer"]["fname"].value;
+var lname=document.forms["customer"]["lname"].value;
+var email=document.forms["customer"]["email"].value;
+var number=document.forms["customer"]["number"].value;
+var description=document.forms["customer"]["desc"].value;
+
+var isValid = true;
+
+if(fname==null ||fname==""){
+    document.getElementById('message').style.visibility="visible";
+    document.getElementById('message').innerHTML="First Name field must not be blank";
+    isValid =  false;
+
+}
+else{
+    document.getElementById('message').style.visibility="hidden";
+
+    }
+if(lname==null || lname==""){
+    document.getElementById('message1').style.visibility="visible";
+    document.getElementById('message1').innerHTML="Last Name Field must not be blank";
+    isValid =  false;
+}
+else{
+    document.getElementById('message1').style.visibility="hidden";
+    }
+
+
+
+if(validateEmail(email)){
+    document.getElementById('message3').style.visibility="visible";
+    document.getElementById('message3').innerHTML="Email Field must not be blank";
+    isValid =  false;
+}
+else{
+    document.getElementById('message3').style.visibility="hidden";
+    }on
+
+
+
+
+
+
+if(phonenumber(number)==false){
+    document.getElementById('message4').style.visibility="visible";
+    document.getElementById('message4').innerHTML="Phone number Field must not be blank";
+    isValid =  false;
+}
+else{
+    document.getElementById('message4').style.visibility="hidden";
+    }
+
+if(description==null || description==""){
+    document.getElementById('message6').style.visibility="visible";
+    document.getElementById('message6').innerHTML="Description Field must not be blank";
+    isValid =  false;
+}
+else{
+    document.getElementById('message6').style.visibility="hidden";
+    }
+
+
+  if(isValid==True)
+  {
+  document.getElementById("form1").submit();
+  }
+
+}
+</script>
+
+</head>
+
+
+
+
+<body >
+
+
+<div>
+  <h2 class="logo"> </h2>
+  <h3 class="header3">Stradivarius Romania</h3>
+  <h4 class="header4"><i>Newsletter<i></h4>
+  <h3 class="about"><a href=aboutUs.htm>About us </a></h3>
+
+  
+  
+  <pre style="text-align:center;" class="description">
+<i class="glyphicon glyphicon-paperclip" style="font-size:45px;"></i>  
+ 
+  <path fill-rule="evenodd" d="M1.646 14.354a.5.5 0 00.708 0l8-8a.5.5 0 00-.708-.708l-8 8a.5.5 0 000 .708z" clip-rule="evenodd"/>
+</svg>
+  AT STRADIVARIUS WE’VE ADAPTED TO THE CURRENT SITUATION IN ORDER TO PROTECT BOTH YOU AND OUR TEAMS
+  
+  
+<b>Free home delivery</b>
+
+Free home delivery on orders of 120 LEI or more
+The carriers that we work with have adapted their delivery processes in order to guarantee the safety of everyone involved
+We appreciate your understanding of any delays that may occur
+
+
+<b>Closed stores</b>
+
+
+Our stores are currently closed.
+
+In order to keep you informed about new collections and offers, we provide you our newsletter 
+<b>SIGN UP FOR OUR NEWSLETTER</b>
+
+
+<svg class="bi bi-box-arrow-down-left" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M13 1.5A1.5 1.5 0 0114.5 3v8a1.5 1.5 0 01-1.5 1.5H9a.5.5 0 010-1h4a.5.5 0 00.5-.5V3a.5.5 0 00-.5-.5H5a.5.5 0 00-.5.5v4a.5.5 0 01-1 0V3A1.5 1.5 0 015 1.5h8zm-11 7a.5.5 0 00-.5.5v5a.5.5 0 00.5.5h5a.5.5 0 000-1H2.5V9a.5.5 0 00-.5-.5z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M1.646 14.354a.5.5 0 00.708 0l8-8a.5.5 0 00-.708-.708l-8 8a.5.5 0 000 .708z" clip-rule="evenodd"/>
+</svg>
+ </pre>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<form  method="get" name="customer"  onsubmit="return Validate()" class="container" id="form1" action="success.htm">
+     
+            <div class="message">*</div>First Name:
+            <input type="text" name="fname" >
+            <td><label class="message" id="message" >
+
+   
+            <div class="message">*</div>Last Name:
+            <input type="text" name="lname" >
+             <label class="message" id="message1">
+        
+      
+     
+            <div class="message"></div>Address:
+            <input type="text" name="address" >
+            <label class="message" id="message2">
+       
+        
+        
+       
+
+<label id="gender" class="message">Gender:</label>
+
+<select id="gen">
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>
+        
+        
+        
+            <div class="message">*</div>Email:
+            <input type="text" name="email" >
+             <label class="message" id="message3">
+      
+        
+            <div class="message">*</div>Phone number:
+            <input type="text" name="number" >
+             <label class="message" id="message4">
+              <label class="message" id="message5">
+      
+        
+  
+            <div class="message">*</div>Description:
+            <textarea class="message" id="message6" name="desc" rows="4" cols="50"></textarea>
+       
+        
+      
+     <input type=submit value="Submit" />
+     
+   
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+</div>
+</body>
+</html>
+
